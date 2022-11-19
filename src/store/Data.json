@@ -1,0 +1,749 @@
+[
+  {
+    "id": 1,
+    "checkbox": false,
+    "name": "ООО АКСИТЕХ",
+    "numEmployees": 5,
+    "address": "ГОРОД МОСКВА ПР-Д НАУЧНЫЙ Д. 19 ЭТАЖ 5 КОМН 4-7",
+    "employees": [
+      {
+        "id": 4,
+        "checkbox": false,
+        "name": "Алексей",
+        "surname": "Федоров",
+        "job": "Техник"
+      },
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Дмитрий",
+        "surname": "Герсимов",
+        "job": "Старший техник"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Анатолий",
+        "surname": "Дворов",
+        "job": "Специалист"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Григорий",
+        "surname": "Варламов",
+        "job": "Фрезеровщик"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Константин",
+        "surname": "Поддубный",
+        "job": "Менеджер"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "checkbox": false,
+    "name": "ООО ЮНИКРАФТ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛИЦА ТВАРДОВСКОГО ДОМ 8 СТРОЕНИЕ 1 ПОМ I ЭТ 3 КОМ 7",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Федор",
+        "surname": "Антонов",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Илья",
+        "surname": "Фантинов",
+        "job": "Старший управляющий"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Геннадий",
+        "surname": "Доскин",
+        "job": "Специалист по безопасности"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Варвара",
+        "surname": "Морсина",
+        "job": "Хим лаборант"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "checkbox": false,
+    "name": "ООО ИНОВАЦИЯ",
+    "numEmployees": 4,
+    "address": "Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ТВЕРСКОЙ УЛ ИЛЬИНКА 4 ПОМЕЩ./КОМ./ЭТАЖ 40/4/1",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Анастасия",
+        "surname": "Герова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Денис",
+        "surname": "Лавров",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Виктор",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "checkbox": false,
+    "name": "ЗАО РЕГИОНАЛЬНАЯ КОРПОРАЦИЯ РАЗВИТИЯ",
+    "numEmployees": 4,
+    "address": "ОБЛАСТЬ РОСТОВСКАЯ Г. РОСТОВ-НА-ДОНУ ПР-КТ ВОРОШИЛОВСКИЙ Д. 12 КАБИНЕТ 37",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Виталий",
+        "surname": "Пехотько",
+        "job": "Старший смотритель"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Георгий",
+        "surname": "Зайкин",
+        "job": "Следователь"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Роман",
+        "surname": "Ефимчук",
+        "job": "Суд.Мед эксперт"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Андрей",
+        "surname": "Сунин",
+        "job": "Главный следователь"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "checkbox": false,
+    "name": "ООО ЦИФРА",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА ПР-КТ ВЕРНАДСКОГО Д. 6 ПОМЕЩ. 528",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Анастасия",
+        "surname": "Герова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Денис",
+        "surname": "Лавров",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Виктор",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "checkbox": false,
+    "name": "ООО КИБЕРНИКА",
+    "numEmployees": 4,
+    "address": "Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ХАМОВНИКИ УЛ ЕФРЕМОВА 20 ЭТ/ПОМ/КОМ/ОФ 1/I/3/15",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Феодосия",
+        "surname": "Старорусова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Карнилий",
+        "surname": "Попов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Анатолий",
+        "surname": "Кирсанов",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Александра",
+        "surname": "Вольтова",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "checkbox": false,
+    "name": "ЗАО СИСТЕМЫ УПРАВЛЕНИЯ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ПРОФСОЮЗНАЯ 78 СТР 1",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Валерия",
+        "surname": "Минаева",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Роман",
+        "surname": "Суходольский",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Александр",
+        "surname": "Брызгин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "checkbox": false,
+    "name": "ООО АБСОЛЮТТЕХ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ЛЕНИНСКАЯ СЛОБОДА Д. 19 СТР. 6 ЭТАЖ 4 КОМ 76",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Екатерина",
+        "surname": "Рогова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Фарух",
+        "surname": "Юсупджанов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Евгений",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Лариса",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "checkbox": false,
+    "name": "ООО ЦИФРА",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА ПР-КТ ВЕРНАДСКОГО Д. 6 ПОМЕЩ. 528",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Анастасия",
+        "surname": "Герова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Денис",
+        "surname": "Лавров",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Виктор",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "checkbox": false,
+    "name": "ООО КИБЕРНИКА",
+    "numEmployees": 4,
+    "address": "Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ХАМОВНИКИ УЛ ЕФРЕМОВА 20 ЭТ/ПОМ/КОМ/ОФ 1/I/3/15",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Феодосия",
+        "surname": "Старорусова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Карнилий",
+        "surname": "Попов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Анатолий",
+        "surname": "Кирсанов",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Александра",
+        "surname": "Вольтова",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "checkbox": false,
+    "name": "ЗАО СИСТЕМЫ УПРАВЛЕНИЯ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ПРОФСОЮЗНАЯ 78 СТР 1",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Валерия",
+        "surname": "Минаева",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Роман",
+        "surname": "Суходольский",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Александр",
+        "surname": "Брызгин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "checkbox": false,
+    "name": "ООО АБСОЛЮТТЕХ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ЛЕНИНСКАЯ СЛОБОДА Д. 19 СТР. 6 ЭТАЖ 4 КОМ 76",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Екатерина",
+        "surname": "Рогова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Фарух",
+        "surname": "Юсупджанов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Евгений",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Лариса",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "checkbox": false,
+    "name": "ООО ЦИФРА",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА ПР-КТ ВЕРНАДСКОГО Д. 6 ПОМЕЩ. 528",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Анастасия",
+        "surname": "Герова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Денис",
+        "surname": "Лавров",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Виктор",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "checkbox": false,
+    "name": "ООО КИБЕРНИКА",
+    "numEmployees": 4,
+    "address": "Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ХАМОВНИКИ УЛ ЕФРЕМОВА 20 ЭТ/ПОМ/КОМ/ОФ 1/I/3/15",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Феодосия",
+        "surname": "Старорусова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Карнилий",
+        "surname": "Попов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Анатолий",
+        "surname": "Кирсанов",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Александра",
+        "surname": "Вольтова",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "checkbox": false,
+    "name": "ЗАО СИСТЕМЫ УПРАВЛЕНИЯ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ПРОФСОЮЗНАЯ 78 СТР 1",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Валерия",
+        "surname": "Минаева",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Роман",
+        "surname": "Суходольский",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Александр",
+        "surname": "Брызгин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "checkbox": false,
+    "name": "ООО АБСОЛЮТТЕХ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ЛЕНИНСКАЯ СЛОБОДА Д. 19 СТР. 6 ЭТАЖ 4 КОМ 76",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Екатерина",
+        "surname": "Рогова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Фарух",
+        "surname": "Юсупджанов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Евгений",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Лариса",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "checkbox": false,
+    "name": "ООО ЦИФРА",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА ПР-КТ ВЕРНАДСКОГО Д. 6 ПОМЕЩ. 528",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Анастасия",
+        "surname": "Герова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Денис",
+        "surname": "Лавров",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Виктор",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "checkbox": false,
+    "name": "ООО КИБЕРНИКА",
+    "numEmployees": 4,
+    "address": "Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ХАМОВНИКИ УЛ ЕФРЕМОВА 20 ЭТ/ПОМ/КОМ/ОФ 1/I/3/15",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Феодосия",
+        "surname": "Старорусова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Карнилий",
+        "surname": "Попов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Анатолий",
+        "surname": "Кирсанов",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Александра",
+        "surname": "Вольтова",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "checkbox": false,
+    "name": "ЗАО СИСТЕМЫ УПРАВЛЕНИЯ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ПРОФСОЮЗНАЯ 78 СТР 1",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Валерия",
+        "surname": "Минаева",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Роман",
+        "surname": "Суходольский",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Александр",
+        "surname": "Брызгин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Виктория",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "checkbox": false,
+    "name": "ООО АБСОЛЮТТЕХ",
+    "numEmployees": 4,
+    "address": "ГОРОД МОСКВА УЛ. ЛЕНИНСКАЯ СЛОБОДА Д. 19 СТР. 6 ЭТАЖ 4 КОМ 76",
+    "employees": [
+      {
+        "id": 0,
+        "checkbox": false,
+        "name": "Екатерина",
+        "surname": "Рогова",
+        "job": "Старший менеджер"
+      },
+      {
+        "id": 1,
+        "checkbox": false,
+        "name": "Фарух",
+        "surname": "Юсупджанов",
+        "job": "Старший механик"
+      },
+      {
+        "id": 2,
+        "checkbox": false,
+        "name": "Евгений",
+        "surname": "Плотин",
+        "job": "Специалист по снабжению"
+      },
+      {
+        "id": 3,
+        "checkbox": false,
+        "name": "Лариса",
+        "surname": "Мискина",
+        "job": "Заведующая складом"
+      }
+    ]
+  }
+]

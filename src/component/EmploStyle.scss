@@ -1,0 +1,157 @@
+.container_E{
+  width: 40%;
+
+  button{
+    margin-bottom: 20px;
+  }
+
+  .addForm{
+    display: flex;
+    flex-direction: column;
+
+    input{
+      width: 60%;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    button{
+      margin-top: 20px;
+      width: 80px;
+      margin-left: 20px;
+    }
+  }
+}
+
+.container_employees{
+  width: 100%;
+  height: 300px;
+  margin-right: 20px;
+  border-radius: 20px;
+  background: aliceblue;
+  overflow: auto;
+
+  .info_employees{
+    width: 100%;
+    overflow: auto;
+    height: 600px;
+  }
+
+  thead{
+    font-size: 18px;
+    padding: 10px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+
+    tr{
+
+      th{
+        background: #628c8c;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+  }
+
+  tbody{
+    z-index: 1;
+    tr{
+      .td-blue{
+        font-size: 10px;
+        font-family: "Roboto Slab";
+        text-align: center;
+        padding: 5px 5px;
+        position: relative;
+
+        .employees_delete{
+          background: none;
+          border: 0;
+          display: block;
+          position: relative;
+          left: 50%;
+          top:50%;
+          transform: translate( -50% );
+        }
+
+        button{
+          display: none;
+          background: none;
+          border: 0;
+          position: absolute;
+          bottom: 1px;
+          right: 1px;
+        }
+      }
+      td:hover{
+        button{
+          cursor: pointer;
+          display: block;
+        }
+      }
+    }
+    tr{
+      .td-blue{
+        background: #96D5D5FF;
+        font-size: 10px;
+        font-family: "Roboto Slab";
+        text-align: center;
+        padding: 5px 5px;
+        position: relative;
+
+        .employees_delete{
+          background: none;
+          border: 0;
+          display: block;
+          position: relative;
+          left: 50%;
+          top:50%;
+          transform: translate( -50% );
+        }
+
+        button{
+          display: none;
+          background: none;
+          border: 0;
+          position: absolute;
+          bottom: 1px;
+          right: 1px;
+        }
+      }
+      .td-grin{
+        background: #96D5A1FF;
+        font-size: 10px;
+        font-family: "Roboto Slab";
+        text-align: center;
+        padding: 5px 5px;
+        position: relative;
+
+        .employees_delete{
+          background: none;
+          border: 0;
+          display: block;
+          position: relative;
+          left: 50%;
+          top:50%;
+          transform: translate( -50% );
+        }
+
+        button{
+          display: none;
+          background: none;
+          border: 0;
+          position: absolute;
+          bottom: 1px;
+          right: 1px;
+        }
+      }
+      td:hover{
+        button{
+          cursor: pointer;
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  width: 96%;
+  height: 700px;
+  border: 2px solid black;
+  border-radius: 50px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+
+}
+
+.image_container {
+  margin-left: 20px;
+
+}
