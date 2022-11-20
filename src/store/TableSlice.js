@@ -1,9 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
+import employees from "../component/Employees/Employees";
 
 
 const initialState = {
   companies: [],
   employeesInfo: [],
+  numInfo: [],
   checkCompanies: true,
   checkEmployees: true,
   editCompanies: {},
@@ -18,46 +20,49 @@ export const TableSlice = createSlice({
     setInfo: (state, action) => {
       state.companies = action.payload;
     },
-    ExtractionEmployees: (state, action) => {
+    openingEmployees: (state, action) => {
       state.companies.filter((item) => item.id === action.payload.id ? item.checkbox = !item.checkbox : item)
-      state.employeesInfo = action.payload.employees
+      state.employeesInfo = action.payload.checkbox ? [] : action.payload.employees
+      state.numInfo = action.payload
     },
-    SelectChecked: (state, action) => {
+    selectChecked: (state, action) => {
       state.companies.forEach(item => item.checkbox = state.checkCompanies)
       state.checkCompanies = !state.checkCompanies
     },
-    useMarkEmployees: (state, action) => {
+    markEmployees: (state, action) => {
       state.employeesInfo.filter((item) => item.id === action.payload ? item.checkbox = !item.checkbox : item)
     },
-    SelectCheckedEmployees: (state, action) => {
+    selectCheckedEmployees: (state, action) => {
       state.employeesInfo.forEach(item => item.checkbox = state.checkEmployees)
       state.checkEmployees = !state.checkEmployees
     },
-    AddEmployees: (state, action) => {
-      state.employeesInfo.push(action.payload)
+    addEmployees: (state, action) => {
+      state.employeesInfo.push(action.payload.user)
+      state.companies.map((item) => item.id === action.payload.id ? item.employees.push(action.payload.user) : item)
     },
-    DeleteEmployees: (state, action) => {
+    deleteEmployees: (state, action) => {
       state.employeesInfo = state.employeesInfo.filter(item => item.id !== action.payload)
       state.employeesInfo = state.employeesInfo.filter(item => !item.checkbox)
+      state.companies.filter((item) => item.id === state.numInfo.id ? item.employees.pop() : '')
     },
-    AddCompanies: (state, action) => {
+    addCompanies: (state, action) => {
       state.companies.push(action.payload)
     },
-    DeleteCompanies: (state, action) => {
+    deleteCompanies: (state, action) => {
       state.companies = state.companies.filter(item => item.id !== action.payload)
       state.companies = state.companies.filter(item => !item.checkbox)
       state.employeesInfo = []
     },
-    EditCompanies: (state, action) => {
+    editCompanies: (state, action) => {
       state.editCompanies = action.payload
     },
-    SaveEditCompanies: (state, action) => {
+    saveEditCompanies: (state, action) => {
       state.companies = state.companies.map((item) => item.id === action.payload.id ? action.payload : item)
     },
-    EditEmployees: (state, action) => {
+    editEmployees: (state, action) => {
       state.editEmployees = action.payload
     },
-    SaveEditEmployees: (state, action) => {
+    saveEditEmployees: (state, action) => {
       state.employeesInfo = state.employeesInfo.map((item) => item.id === action.payload.id ? action.payload : item)
     }
   }
@@ -65,17 +70,17 @@ export const TableSlice = createSlice({
 
 export const {
   setInfo,
-  ExtractionEmployees,
-  SelectChecked,
-  useMarkEmployees,
-  SelectCheckedEmployees,
-  AddEmployees,
-  DeleteEmployees,
-  AddCompanies,
-  DeleteCompanies,
-  EditCompanies,
-  SaveEditCompanies,
-  EditEmployees,
-  SaveEditEmployees,
+  openingEmployees,
+  selectChecked,
+  markEmployees,
+  selectCheckedEmployees,
+  addEmployees,
+  deleteEmployees,
+  addCompanies,
+  deleteCompanies,
+  editCompanies,
+  saveEditCompanies,
+  editEmployees,
+  saveEditEmployees,
 } = TableSlice.actions;
 export default TableSlice.reducer;

@@ -1,48 +1,48 @@
 import React, {useEffect} from 'react';
 import './CompaniesStyle.scss'
 import {useDispatch, useSelector} from "react-redux";
-import {CompaniesSelector, EditCompaniesSelector, EmployeesSelector} from "../store/Selectors";
+import {companiesSelector, editCompaniesSelector} from "../../store/Selectors";
 import {
-  AddCompanies, DeleteCompanies, EditCompanies,
-  ExtractionEmployees,
-  SaveEditCompanies,
-  SelectChecked,
+  addCompanies, deleteCompanies, editCompanies,
+  openingEmployees,
+  saveEditCompanies,
+  selectChecked,
   setInfo
-} from "../store/TableSlice";
-import Data from "../store/Data.json"
+} from "../../store/TableSlice";
+import Data from "../../store/Data.json"
 
+const imgEdit = "/img/edit.png"
+const imgDelete = "/img/delete.png"
 
 const Companies = () => {
   const dispatch = useDispatch();
-  const CompaniesInfo = useSelector(CompaniesSelector);
-  const Edit = useSelector(EditCompaniesSelector);
+  const companiesInfo = useSelector(companiesSelector);
+  const edit = useSelector(editCompaniesSelector);
   const [formCompanies, setFormCompanies] = React.useState(false);
   const [valueName, setValueName] = React.useState('');
   const [valueNum, setValueNum] = React.useState('');
   const [valueAddress, setValueAddress] = React.useState('');
   const [valueEditName, setValueEditName] = React.useState('');
   const [valueEditAddress, setValueEditAddress] = React.useState('');
-  const [EditForm, setEditForm] = React.useState(false);
+  const [editForm, setEditForm] = React.useState(false);
 
   useEffect(() => {
     request();
   }, [])
 
-
+  console.log(companiesInfo.employees)
   const request = () => dispatch(setInfo(Data))
 
-  function Extraction (id) {
-    dispatch(ExtractionEmployees(id))
+  const extraction = (id) => {
+    dispatch(openingEmployees(id))
   }
 
-  function SelectAll () {
-    dispatch(SelectChecked())
+  const selectAll = () => {
+    dispatch(selectChecked())
   }
 
-  function addCompaniesItem () {
-    if (valueName === '') return
-    if (valueNum === '') return
-    if (valueAddress === '') return
+  const addCompaniesItem = () => {
+    if (valueName === '' || valueNum === '' || valueAddress === '') return
     const itemCompanies = {
       "id": 1,
       "checkbox": false,
@@ -51,7 +51,7 @@ const Companies = () => {
       "address": valueAddress,
       "employees": []
     }
-    dispatch(AddCompanies(itemCompanies))
+    dispatch(addCompanies(itemCompanies))
     setValueName('');
     setValueNum('');
     setValueAddress('');
@@ -59,32 +59,31 @@ const Companies = () => {
 
   }
 
-  function DeleteItem (id) {
-    dispatch(DeleteCompanies(id))
+  const deleteItem = (id) => {
+    dispatch(deleteCompanies(id))
   }
 
-  function EditItem (item) {
-    dispatch(EditCompanies(item))
+  const editItem = (item) => {
+    dispatch(editCompanies(item))
     setValueEditName(item.name)
     setValueEditAddress(item.address)
-    setEditForm(!EditForm)
+    setEditForm(!editForm)
   }
 
-  function SaveItem () {
-    if (valueEditName === "") return
-    if (valueEditAddress === "") return
+  const saveItem = () => {
+    if (valueEditName === "" || valueEditAddress === "") return
     const EditElement = {
-      id: Edit.id,
-      checkbox: Edit.checkbox,
+      id: edit.id,
+      checkbox: edit.checkbox,
       name: valueEditName,
-      numEmployees: Edit.numEmployees,
+      numEmployees: edit.numEmployees,
       address: valueEditAddress,
-      employees: Edit.employees
+      employees: edit.employees
     }
-    dispatch(SaveEditCompanies(EditElement))
+    dispatch(saveEditCompanies(EditElement))
     setValueEditName('')
     setValueEditAddress('')
-    setEditForm(!EditForm)
+    setEditForm(!editForm)
   }
 
   return (
@@ -113,7 +112,7 @@ const Companies = () => {
             <table>
               <thead>
               <tr>
-                <th>All <br/><input type="checkbox" checked={CompaniesInfo.checkbox} onClick={SelectAll}/></th>
+                <th>All <br/><input type="checkbox" checked={companiesInfo.checkbox} onClick={selectAll}/></th>
                 <th>Name<br/>Companies</th>
                 <th>Num</th>
                 <th>Address</th>
@@ -122,29 +121,31 @@ const Companies = () => {
               </thead>
               <tbody className='info_companies'>
               {
-                !EditForm ?
-                  CompaniesInfo.map((item) => (
+                !editForm ?
+                  companiesInfo.map((item) => (
                     <tr key={item.id}>
                       <td
                         style={{cursor: "pointer"}}
-                        onClick={() => Extraction(item)}
+                        onClick={() => extraction(item)}
                         className={!item.checkbox ? "td-blue" : "td-grin"}>
                         <input type='checkbox' checked={item.checkbox}/>
                       </td>
-                      <td className={!item.checkbox ? "td-blue" : "td-grin"}>{item.name}
+                      <td className={!item.checkbox ? "td-blue" : "td-grin"}>
+                        {item.name}
                       </td>
                       <td className={!item.checkbox ? "td-blue" : "td-grin"}>
                         {item.employees.length}
                       </td>
-                      <td className={!item.checkbox ? "td-blue" : "td-grin"}>{item.address}
+                      <td className={!item.checkbox ? "td-blue" : "td-grin"}>
+                        {item.address}
                       </td>
                       <td className={!item.checkbox ? "td-blue" : "td-grin"}>
                         <div className='btn-group'>
-                          <button onClick={() => DeleteItem(item.id)} className='btn-delete'>
-                            <img width='30px' height='30px' src='/img/delete.png'/>
+                          <button onClick={() => deleteItem(item.id)} className='btn-delete'>
+                            <img width='30px' height='30px' src={imgDelete}/>
                           </button>
-                          <button onClick={() => EditItem(item)} className='btn-delete'>
-                            <img width='30px' height='30px' src='/img/edit.png'/>
+                          <button onClick={() => editItem(item)} className='btn-delete'>
+                            <img width='30px' height='30px' src={imgEdit}/>
                           </button>
                         </div>
                       </td>
@@ -155,15 +156,14 @@ const Companies = () => {
                            onChange={(e) => setValueEditName(e.target.value)}/>
                     <input value={valueEditAddress} type="text" placeholder="address"
                            onChange={(e) => setValueEditAddress(e.target.value)}/>
-                    <button onClick={SaveItem}>Save</button>
-                    <button onClick={() => setEditForm(!EditForm)}>Cancel</button>
+                    <button onClick={saveItem}>Save</button>
+                    <button onClick={() => setEditForm(!editForm)}>Cancel</button>
                   </div>
               }
               </tbody>
             </table>
           </div>
       }
-
     </div>
   );
 };

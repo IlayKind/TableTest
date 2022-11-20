@@ -1,23 +1,22 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {CompaniesSelector, EditEmployeesSelector, EmployeesSelector} from "../store/Selectors";
+import {editEmployeesSelector, employeesSelector, numSelector} from "../../store/Selectors";
 import './EmploStyle.scss'
 import {
-  DeleteEmployees, EditEmployees,
-  SaveEditEmployees,
-  SelectCheckedEmployees,
-  useMarkEmployees
-} from "../store/TableSlice";
-import {AddEmployees} from "../store/TableSlice";
+  deleteEmployees, editEmployees, markEmployees,
+  saveEditEmployees,
+  selectCheckedEmployees, addEmployees, addLengthNum
+} from "../../store/TableSlice";
+
 
 const imgEdit = "/img/edit.png"
 const imgDelete = "/img/delete.png"
 
 const Employees = () => {
   const dispatch = useDispatch();
-  const EmployeesInfo = useSelector(EmployeesSelector);
-  const CompaniesInfo = useSelector(CompaniesSelector);
-  const Edit = useSelector(EditEmployeesSelector);
+  const employeesInfo = useSelector(employeesSelector);
+  const lengthInfo = useSelector(numSelector);
+  const edit = useSelector(editEmployeesSelector);
   const [addFields, setAddFields] = React.useState(false);
   const [valueName, setValueName] = React.useState('');
   const [valueSurname, setValueSurname] = React.useState('');
@@ -25,75 +24,74 @@ const Employees = () => {
   const [valueEditName, setValueEditName] = React.useState('');
   const [valueEditSurname, setValueEditSurname] = React.useState('');
   const [valueEditJob, setValueEditJob] = React.useState('');
-  const [EditForm, setEditForm] = React.useState(false);
+  const [editForm, setEditForm] = React.useState(false);
 
 
-  function aDD () {
-    if (valueName === '') return
-    if (valueSurname === '') return
-    if (valueJob === '') return
-    const ObjEmployees = {
-      id: Date.now(),
-      name: valueName,
-      surname: valueSurname,
-      job: valueJob,
-      checkbox: false,
+  const aDD = (id) => {
+    if (valueName === ''|| valueSurname === '' || valueJob === '') return
+    const objEmployees = {
+      user : {
+        id: Date.now(),
+        name: valueName,
+        surname: valueSurname,
+        job: valueJob,
+        checkbox: false,
+      },
+      id : id
     }
-    dispatch(AddEmployees(ObjEmployees, CompaniesInfo))
-
+    dispatch(addEmployees(objEmployees))
     setAddFields(!addFields)
     setValueName('');
     setValueSurname('');
     setValueJob('');
   }
 
-  function Mark (id) {
-    dispatch(useMarkEmployees(id))
+  const checkedAll = (id) => {
+    dispatch(markEmployees(id))
   }
 
-  function SelectAllEmployees () {
-    dispatch(SelectCheckedEmployees())
+  const selectAllEmployees = () => {
+    dispatch(selectCheckedEmployees())
   }
 
-  function addEmployees () {
+  const openEmployees = () => {
     setAddFields(!addFields)
   }
 
-  function DeleteItem (id) {
-    dispatch(DeleteEmployees(id))
+  const deleteItem = (id) => {
+    dispatch(deleteEmployees(id))
   }
 
-  function EditItem (item) {
-    dispatch(EditEmployees(item))
+  const editItem = (item) => {
+    dispatch(editEmployees(item))
     setValueEditName(item.name)
     setValueEditSurname(item.surname)
     setValueEditJob(item.job)
-    setEditForm(!EditForm)
+    setEditForm(!editForm)
   }
 
-  function SaveItem () {
-    if (valueEditName === "") return
-    if (valueEditSurname === "") return
-    if (valueEditJob === "") return
-    const EditElement = {
-      id: Edit.id,
-      checkbox: Edit.checkbox,
+  const saveItem = () => {
+    if (valueEditName === "" || valueEditSurname === "" || valueEditJob === "")return
+    const editElement = {
+      id: edit.id,
+      checkbox: edit.checkbox,
       name: valueEditName,
       surname: valueEditSurname,
       job: valueEditJob,
     }
-    dispatch(SaveEditEmployees(EditElement))
+    dispatch(saveEditEmployees(editElement))
     setValueEditName('')
     setValueEditSurname('')
     setValueEditJob('')
-    setEditForm(!EditForm)
+    setEditForm(!editForm)
   }
-
+  console.log(employeesInfo)
+  console.log(lengthInfo)
   return (
     <div className='container_E'>
       <button
-        disabled={EditForm || addFields || EmployeesInfo.length === 0}
-        onClick={addEmployees}
+        disabled={editForm || addFields || employeesInfo.length === 0}
+        onClick={openEmployees}
         style={{cursor: "pointer"}}
       >
         Добавить сотрудника
@@ -107,35 +105,35 @@ const Employees = () => {
                      onChange={(e) => setValueSurname(e.target.value)}/>
               <input type='text' placeholder={"Должность"} value={valueJob}
                      onChange={(e) => setValueJob(e.target.value)}/>
-              <button onClick={aDD}>
+              <button onClick={() => aDD(lengthInfo.id)}>
                 Добавить
               </button>
               <button onClick={() => setAddFields(!addFields)}>
                 Отмена
               </button>
-            </div> : <div>
+            </div> : <>
               {
-                EmployeesInfo.length !== 0 ? <div>
+                employeesInfo.length !== 0 ?
                     <table>
                       <thead>
                       <tr>
                         <th>
-                          Выделить всё
+                          All
                           <br/>
-                          <input type="checkbox" checked={EmployeesInfo.checkbox} onClick={SelectAllEmployees}/>
+                          <input type="checkbox" checked={employeesInfo.checkbox} onClick={selectAllEmployees}/>
                         </th>
-                        <th>Имя</th>
-                        <th>Фамилия</th>
-                        <th>Должность</th>
-                        <th>Удаление</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Job</th>
+                        <th>Delete<br/>Edit</th>
                       </tr>
                       </thead>
                       <tbody className='info_employees'>
                       {
-                        !EditForm ?
-                          EmployeesInfo.map((item) => <tr key={item.id}>
+                        !editForm ?
+                          employeesInfo.map((item) => <tr key={item.id}>
                             <td style={{cursor: "pointer"}} className={!item.checkbox ? "td-blue" : "td-grin"}
-                                onClick={() => Mark(item.id)}>
+                                onClick={() => checkedAll(item.id)}>
                               <input type='checkbox' checked={item.checkbox}/>
                             </td>
                             <td className={!item.checkbox ? "td-blue" : "td-grin"}>
@@ -148,10 +146,10 @@ const Employees = () => {
                               {item.job}
                             </td>
                             <td className={!item.checkbox ? "td-blue" : "td-grin"}>
-                              <button onClick={() => DeleteItem(item.id)} className='employees_delete'>
+                              <button onClick={() => deleteItem(item.id)} className='employees_delete'>
                                 <img width='30px' height='30px' src={imgDelete}/>
                               </button>
-                              <button onClick={() => EditItem(item)} className='employees_delete'>
+                              <button onClick={() => editItem(item)} className='employees_delete'>
                                 <img width='30px' height='30px' src={imgEdit}/>
                               </button>
                             </td>
@@ -163,16 +161,15 @@ const Employees = () => {
                                    onChange={(e) => setValueEditSurname(e.target.value)}/>
                             <input value={valueEditJob} type="text" placeholder="job"
                                    onChange={(e) => setValueEditJob(e.target.value)}/>
-                            <button onClick={SaveItem}>Save</button>
-                            <button onClick={() => setEditForm(!EditForm)}>Cancel</button>
+                            <button onClick={saveItem}>Save</button>
+                            <button onClick={() => setEditForm(!editForm)}>Cancel</button>
                           </div>
                       }
                       </tbody>
                     </table>
-                  </div>
                   : ""
               }
-            </div>
+            </>
         }
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import './StyleApp.scss'
-import Companies from "./component/Companies";
-import Employees from "./component/Employees";
+import Companies from "./component/Companies/Companies";
+import Employees from "./component/Employees/Employees";
 
 function App () {
   return (
