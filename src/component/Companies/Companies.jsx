@@ -30,7 +30,6 @@ const Companies = () => {
     request();
   }, [])
 
-  console.log(companiesInfo.employees)
   const request = () => dispatch(setInfo(Data))
 
   const extraction = (id) => {

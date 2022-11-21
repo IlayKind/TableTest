@@ -5,7 +5,7 @@ import './EmploStyle.scss'
 import {
   deleteEmployees, editEmployees, markEmployees,
   saveEditEmployees,
-  selectCheckedEmployees, addEmployees, addLengthNum
+  selectCheckedEmployees, addEmployees,
 } from "../../store/TableSlice";
 
 
@@ -85,8 +85,7 @@ const Employees = () => {
     setValueEditJob('')
     setEditForm(!editForm)
   }
-  console.log(employeesInfo)
-  console.log(lengthInfo)
+
   return (
     <div className='container_E'>
       <button

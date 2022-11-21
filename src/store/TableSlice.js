@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import employees from "../component/Employees/Employees";
 
 
 const initialState = {
