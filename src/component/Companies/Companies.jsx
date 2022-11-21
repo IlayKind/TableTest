@@ -88,14 +88,9 @@ const Companies = () => {
 
   return (
     <div className='container_C'>
-      {
-        formCompanies ? <button className='add-companies' onClick={() => setFormCompanies(!formCompanies)}>
-            Cписок Компаний
-          </button> :
           <button className='add-companies' onClick={() => setFormCompanies(!formCompanies)}>
-            Добавить компанию
+            {!formCompanies ?  "Добавить компанию" : "Список компаний"}
           </button>
-      }
       {
         formCompanies ?
           <div className='form-companies'>
